@@ -27,9 +27,9 @@ function cycle()
         if (_G.kms or player ~= game:GetService("Players").LocalPlayer) 
            and not player.Character:FindFirstChildOfClass("ForceField") then
             if _G.Blatant == false then
+                equipls()
                 Damageblatant(player)
             else
-                equipls()
                 Damagelegit(player)
             end
         end
