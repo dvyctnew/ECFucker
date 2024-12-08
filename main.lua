@@ -43,9 +43,9 @@ local Window = Fluent:CreateWindow({
     Title = "ECFucker" .. " beta",
     SubTitle = "by dvyct",
     TabWidth = 160,
-    Size = UDim2.fromOffset(580, 460),
+    Size = UDim2.fromOffset(460, 205),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Dark",
+    Theme = "Darker",
     MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
 })
 
