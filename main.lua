@@ -1,5 +1,7 @@
 --loadstring(game:HttpGet("https://raw.githubusercontent.com/dvyctnew/ECFucker/refs/heads/main/main.lua"))()
 _G.kms = true
+_G.SoundRapeDelay = 0.05
+local jork = game.ReplicatedStorage.Weapons.Goedenag
 function  Damage(Player)
     local args = {
         [1] = "fffffffff",
@@ -28,6 +30,29 @@ function equipls()
     end  
 end
 
+function equipjork()
+    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Jerk Off")
+    if tool then
+        
+        tool.Parent = game.Players.LocalPlayer.Character       
+    else 
+        local jorky = jork:Clone()
+        jorky.Parent = game.Players.LocalPlayer.Character
+        jorky.Name = "Jerk Off"
+    end  
+end
+
+function unequipjork()
+    local tool = game.Players.LocalPlayer.Character:FindFirstChild("Jerk Off")
+    if tool then
+        tool.Parent = game.Players.LocalPlayer.Backpack
+    else 
+        local jorky = jork:Clone()
+        jorky.Parent = game.Players.LocalPlayer.Character
+        jorky.Name = "Jerk Off"
+    end  
+end
+
 function repeatAc(times)
     for i = 1, times do
         cycle()
@@ -43,9 +68,9 @@ local Window = Fluent:CreateWindow({
     Title = "ECFucker" .. " beta",
     SubTitle = "by dvyct",
     TabWidth = 160,
-    Size = UDim2.fromOffset(460, 205),
+    Size = UDim2.fromOffset(500, 500),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
-    Theme = "Darker",
+    Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
 })
 
@@ -60,7 +85,7 @@ local Options = Fluent.Options
 do
     Tabs.Main:AddButton({
         Title = "Kill All",
-        Description = "Must have Longsword.",
+        Description = "No Requirements",
         Callback = function()
             Window:Dialog({
                 Title = "Are you sure?",
@@ -90,7 +115,71 @@ do
     end)
 
     Options.kms:SetValue(true) 
+    local Toggle = Tabs.Main:AddToggle("SoundLoop", {Title = "SoundRape 1", Default = false })
+
+    Toggle:OnChanged(function()
+    if Options.SoundLoop.Value == true then
+        equipls()
+    end
+        while Options.SoundLoop.Value == true do
+            local args = {
+                [1] = 0
+            }
+            game:GetService("Players").LocalPlayer.Character.Longsword.Events.PlayVocal:FireServer(unpack(args)) 
+            wait(_G.SoundRapeDelay)
+        end
+        end)
+
+    Options.SoundLoop:SetValue(false)
+--[[
+local args = {
+    [1] = game:GetService("Players").LocalPlayer.Character.Longsword.Sabre.Blade.Lunge
+}
+
+game:GetService("Players").LocalPlayer.Character.Longsword.Events.PlaySound:FireServer(unpack(args))
+]]
+
+local Toggle = Tabs.Main:AddToggle("SoundLoop2", {Title = "SoundRape 2", Default = false })
+
+Toggle:OnChanged(function()
+if Options.SoundLoop2.Value == true then
+    equipls()
+end
+    while Options.SoundLoop2.Value == true do
+        local args = {
+            [1] = game:GetService("Players").LocalPlayer.Character.Longsword.Sabre.Blade.Lunge
+        }
+        
+        game:GetService("Players").LocalPlayer.Character.Longsword.Events.PlaySound:FireServer(unpack(args))
+        
+        wait(_G.SoundRapeDelay)
+    end
+    end)
+
+Options.SoundLoop2:SetValue(false)
+
+local Toggle = Tabs.Main:AddToggle("Jorking", {Title = "FE JerkOff", Default = false })
+
+Toggle:OnChanged(function()
+    while Options.Jorking.Value == true do
+        equipjork()
+        wait(0.01)
+        unequipjork()
+        
+        wait(0.01)
+    end
+if Options.Jorking.Value == false then
+    local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Jerk Off")
+    if tool then
+        tool:Destroy()
+    end
     
+
+end
+    end)
+
+Options.Jorking:SetValue(false)
+
 end
 
 -- Addons:
