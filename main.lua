@@ -1,17 +1,6 @@
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/dvyctnew/ECFucker/refs/heads/main/main.lua"))()
 _G.kms = true
-_G.Blatant = false
-
-function Damageblatant(Player)
-    local args = {
-        [1] = "ffffff",
-        [2] = "\154os\195\165\245\175B\14\154b\196\0\0\0\0\0\0\128?\0\0\0\0",
-        [3] = Player.Character.Humanoid
-    }
-    
-    game:GetService("Players").LocalPlayer.Character.Longsword.Events.BlockInvoke:InvokeServer(unpack(args))
-end
-
-function  Damagelegit(Player)
+function  Damage(Player)
     local args = {
         [1] = "fffffffff",
         [2] = "\161\202\22@P9\3D\249\128p\193{\20\198\192\184\30\5>\225z$\193\0\0HB\155\173\248A\0\0\0\0",
@@ -24,14 +13,8 @@ end
 
 function cycle()
     for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
-        if (_G.kms or player ~= game:GetService("Players").LocalPlayer) 
-           and not player.Character:FindFirstChildOfClass("ForceField") then
-            if _G.Blatant == false then
-                equipls()
-                Damageblatant(player)
-            else
-                Damagelegit(player)
-            end
+        if (_G.kms or player ~= game:GetService("Players").LocalPlayer) and not player.Character:FindFirstChildOfClass("ForceField") then
+                Damage(player)
         end
     end
 end
@@ -81,7 +64,7 @@ do
         Callback = function()
             Window:Dialog({
                 Title = "Are you sure?",
-                Content = "Are you sure you want to kill all, KILLS DONT SHOW UP IN LEADERBOARD.",
+                Content = "Are you sure you want to kill all, KILLS SHOW UP IN LEADERBOARD.",
                 Buttons = {
                     {
                         Title = "Confirm",
@@ -99,14 +82,6 @@ do
             })
         end
     })
-
-    local Toggle = Tabs.Main:AddToggle("Blatant", {Title = "Blatant but Doesnt need anything to Kill", Default = false })
-
-    Toggle:OnChanged(function()
-      _G.Blatant = Options.Blatant.Value 
-    end)
-
-    Options.Blatant:SetValue(false)
 
     local Toggle = Tabs.Main:AddToggle("kms", {Title = "Dies with Kill All.", Default = true })
 
