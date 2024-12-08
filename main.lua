@@ -29,6 +29,7 @@ function cycle()
             if _G.Blatant == false then
                 Damageblatant(player)
             else
+                equipls()
                 Damagelegit(player)
             end
         end
@@ -45,7 +46,6 @@ function equipls()
 end
 
 function repeatAc(times)
-    equipls()
     for i = 1, times do
         cycle()
         task.wait(0.01)
