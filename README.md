@@ -8,7 +8,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/dvyctnew/ECFucker/ref
 # Credits 🍆
 Credits to Deletmob v2 by Mick Gordon
 
-Credits to me, dvyct.
+Credits to Fluent UI by dawid-scripts
 
 # Current Functions 🙏
 Kill all
