@@ -180,6 +180,38 @@ end
 
 Options.Jorking:SetValue(false)
 
+
+
+
+
+Tabs.Main:AddButton({
+    Title = "Load DMOBV2",
+    Description = "Loads Deletemob V2",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Mick-gordon/Hyper-Escape/main/DeleteMobV2.lua", true))()
+    end
+})
+
+Tabs.Main:AddButton({
+    Title = "Removes Bullet Drop for Bow",
+    Description = "MUST HAVE OUT OR IT WILL BREAK",
+    Callback = function()
+        game.Players.LocalPlayer.Character:FindFirstChild("Bow").Settings.Miscellaneous.BulletDropPerFrame.Value = 0
+    end
+})
+
+local Slider = Tabs.Main:AddSlider("BulletSpeed", {
+    Title = "Bullet Speed",
+    Description = "Default is 12",
+    Default = 12,
+    Min = 0,
+    Max = 100,
+    Rounding = 1,
+    Callback = function(Value)
+        game.Players.LocalPlayer.Character:FindFirstChild("Bow").Settings.Miscellaneous.BulletSpeedPerFrame.Value = Value
+    end
+})
+
 end
 
 -- Addons:
