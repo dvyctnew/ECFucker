@@ -77,6 +77,7 @@ local Window = Fluent:CreateWindow({
 --Fluent provides Lucide Icons https://lucide.dev/icons/ for the tabs, icons are optional
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" }),
+    BowMods = Window:AddTab({ Title = "Bow Mods", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -192,15 +193,25 @@ Tabs.Main:AddButton({
     end
 })
 
-Tabs.Main:AddButton({
-    Title = "Removes Bullet Drop for Bow",
-    Description = "MUST HAVE OUT OR IT WILL BREAK",
-    Callback = function()
-        game.Players.LocalPlayer.Character:FindFirstChild("Bow").Settings.Miscellaneous.BulletDropPerFrame.Value = 0
+local Slider = Tabs.BowMods:AddSlider("BulletDrop", {
+    Title = "Bullet Drop",
+    Description = "Default is 15",
+    Default = 15,
+    Min = 0,
+    Max = 15,
+    Rounding = 1,
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        local bow = player.Character:FindFirstChild("Bow") or player.Backpack:FindFirstChild("Bow")
+
+         if bow then
+            local decimalValue = Value / 100
+            bow.Settings.Miscellaneous.BulletDropPerFrame.Value = decimalValue
+         end 
     end
 })
 
-local Slider = Tabs.Main:AddSlider("BulletSpeed", {
+local Slider = Tabs.BowMods:AddSlider("BulletSpeed", {
     Title = "Bullet Speed",
     Description = "Default is 12",
     Default = 12,
@@ -208,10 +219,62 @@ local Slider = Tabs.Main:AddSlider("BulletSpeed", {
     Max = 100,
     Rounding = 1,
     Callback = function(Value)
-        game.Players.LocalPlayer.Character:FindFirstChild("Bow").Settings.Miscellaneous.BulletSpeedPerFrame.Value = Value
+        local player = game.Players.LocalPlayer
+        local bow = player.Character:FindFirstChild("Bow") or player.Backpack:FindFirstChild("Bow")
+
+         if bow then
+         bow.Settings.Miscellaneous.BulletSpeedPerFrame.Value = Value
+         end 
     end
 })
+local Slider = Tabs.BowMods:AddSlider("Recoil", {
+    Title = "Bullet Recoil",
+    Description = "Default is 2.",
+    Default = 2,
+    Min = 0,
+    Max = 4,
+    Rounding = 1,
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        local bow = player.Character:FindFirstChild("Bow") or player.Backpack:FindFirstChild("Bow")
 
+         if bow then
+         bow.Settings.Miscellaneous.FireRecoil.Value = Value
+         end 
+    end
+})
+local Slider = Tabs.BowMods:AddSlider("Reload", {
+    Title = "Reload Speed",
+    Description = "Default is 3.",
+    Default = 3,
+    Min = 0.1,
+    Max = 3,
+    Rounding = 1,
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        local bow = player.Character:FindFirstChild("Bow") or player.Backpack:FindFirstChild("Bow")
+
+         if bow then
+         bow.Settings.Miscellaneous.ReloadSpeed.Value = Value
+         end 
+    end
+})
+local Slider = Tabs.BowMods:AddSlider("Reload2", {
+    Title = "Reload Speed, moving.",
+    Description = "Default is 4.",
+    Default = 4,
+    Min = 0.1,
+    Max = 4,
+    Rounding = 1,
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        local bow = player.Character:FindFirstChild("Bow") or player.Backpack:FindFirstChild("Bow")
+
+         if bow then
+         bow.Settings.Miscellaneous.ReloadSpeedWhileMoving.Value = Value
+         end 
+    end
+})
 end
 
 -- Addons:
