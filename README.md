@@ -10,23 +10,6 @@ Credits to Deletmob v2 by Mick Gordon
 
 Credits to Fluent UI by dawid-scripts
 
-# Current Functions 🙏
-Kill all
- > Kill self with kill all
- 
-Soundrape
- >Soundrape 1,
- Soundrape 2,
- both require longsword
-
-
-Bow Mods
-> Remove Bullet Drop,
-  Bullet Speed Slider
-
-Misc
- > FE Jerkoff,
-   Load Deletemob v2
 # Links 🔗
 European Conquests Discord:  https://discord.gg/rrzftp6DqX
 
