@@ -6,7 +6,7 @@ since this is open source and i want to be credited, credit me if you take code.
 # Loadstring 💻
 loadstring(game:HttpGet("https://raw.githubusercontent.com/dvyctnew/ECFucker/refs/heads/main/main.lua"))()
 # Credits 🍆
-Credits to Deletmob v2 by Mick Gordon
+Credits to Deletemob v2 by Mick Gordon
 
 Credits to Fluent UI by dawid-scripts
 
