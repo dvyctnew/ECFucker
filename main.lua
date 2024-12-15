@@ -78,6 +78,7 @@ local Window = Fluent:CreateWindow({
 local Tabs = {
     Main = Window:AddTab({ Title = "Main", Icon = "" }),
     BowMods = Window:AddTab({ Title = "Bow Mods", Icon = "" }),
+    Horse = Window:AddTab({ Title = "Horse", Icon = "" }),
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
 
@@ -275,6 +276,129 @@ local Slider = Tabs.BowMods:AddSlider("Reload2", {
          end 
     end
 })
+
+Tabs.Horse:AddButton({
+    Title = "Spawn Horse",
+    Description = "",
+    Callback = function()
+        local horsespawnerevent = game:GetService("ReplicatedStorage").ReplicatedEvents.SpawnItem
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local hit = mouse.Hit
+        local RunService = game:GetService("RunService")
+        
+        local pos = hit.Position -- 1
+        local horsestring = "Horse" -- 2
+        local ho = game:GetService("ReplicatedStorage").Weapons["Spawn Horse"].HorseObject -- 3 
+        
+        -- RunService.RenderStepped:Connect(function()
+        horsespawnerevent:FireServer(pos, horsestring, ho)
+        -- wait(0.1)
+        -- end)
+    end
+})
+
+Tabs.Horse:AddButton({
+    Title = "Spawn Armoured Destirer",
+    Description = "",
+    Callback = function()
+        local horsespawnerevent = game:GetService("ReplicatedStorage").ReplicatedEvents.SpawnItem
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local hit = mouse.Hit
+        local RunService = game:GetService("RunService")
+        
+        local pos = hit.Position -- 1
+        local horsestring = "Horse" -- 2
+        local ho = game:GetService("ReplicatedStorage").Weapons["Spawn Armoured Destirer"].HorseObject -- 3 
+        
+        -- RunService.RenderStepped:Connect(function()
+        horsespawnerevent:FireServer(pos, horsestring, ho)
+        -- wait(0.1)
+        -- end)
+    end
+})
+
+Tabs.Horse:AddButton({
+    Title = "Spawn Barbed Horse 1",
+    Description = "",
+    Callback = function()
+        local horsespawnerevent = game:GetService("ReplicatedStorage").ReplicatedEvents.SpawnItem
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local hit = mouse.Hit
+        local RunService = game:GetService("RunService")
+        
+        local pos = hit.Position -- 1
+        local horsestring = "Horse" -- 2
+        local ho = game:GetService("ReplicatedStorage").Weapons["Spawn Barded Horse 1"].HorseObject -- 3 
+        
+        -- RunService.RenderStepped:Connect(function()
+        horsespawnerevent:FireServer(pos, horsestring, ho)
+        -- wait(0.1)
+        -- end)
+    end
+})
+
+Tabs.Horse:AddButton({
+    Title = "Spawn Barded Horse 2",
+    Description = "",
+    Callback = function()
+        local horsespawnerevent = game:GetService("ReplicatedStorage").ReplicatedEvents.SpawnItem
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local hit = mouse.Hit
+        local RunService = game:GetService("RunService")
+        
+        local pos = hit.Position -- 1
+        local horsestring = "Horse" -- 2
+        local ho = game:GetService("ReplicatedStorage").Weapons["Spawn Barded Horse 2"].HorseObject -- 3 
+        
+        -- RunService.RenderStepped:Connect(function()
+        horsespawnerevent:FireServer(pos, horsestring, ho)
+        -- wait(0.1)
+        -- end)
+    end
+})
+
+Tabs.Horse:AddButton({
+    Title = "Spawn Barded Horse 3",
+    Description = "",
+    Callback = function()
+        local horsespawnerevent = game:GetService("ReplicatedStorage").ReplicatedEvents.SpawnItem
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local hit = mouse.Hit
+        local RunService = game:GetService("RunService")
+        
+        local pos = hit.Position -- 1
+        local horsestring = "Horse" -- 2
+        local ho = game:GetService("ReplicatedStorage").Weapons["Spawn Barded Horse 3"].HorseObject -- 3 
+        
+        -- RunService.RenderStepped:Connect(function()
+        horsespawnerevent:FireServer(pos, horsestring, ho)
+        -- wait(0.1)
+        -- end)
+    end
+})
+
+
+Tabs.Horse:AddButton({
+    Title = "Spawn Decorated Horse",
+    Description = "",
+    Callback = function()
+        local horsespawnerevent = game:GetService("ReplicatedStorage").ReplicatedEvents.SpawnItem
+        local mouse = game.Players.LocalPlayer:GetMouse()
+        local hit = mouse.Hit
+        local RunService = game:GetService("RunService")
+        
+        local pos = hit.Position -- 1
+        local horsestring = "Horse" -- 2
+        local ho = game:GetService("ReplicatedStorage").Weapons["Spawn Decorated Horse"].HorseObject -- 3 
+        
+        -- RunService.RenderStepped:Connect(function()
+        horsespawnerevent:FireServer(pos, horsestring, ho)
+        -- wait(0.1)
+        -- end)
+    end
+})
+
+
 end
 
 -- Addons:
